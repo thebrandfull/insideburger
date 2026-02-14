@@ -1,0 +1,303 @@
+/* Fonts */
+@font-face {
+    font-family: 'Ketchup Manis';
+    src: url('../font/Ketchup Manis.woff2') format('woff2'),
+        url('../font/Ketchup Manis.woff') format('woff'),
+        url('../font/Ketchup Manis.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f7f3ef;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.links-header {
+    background: linear-gradient(135deg, rgba(248, 179, 0, 0.1) 0%, rgba(248, 96, 0, 0.08) 100%);
+    padding: 40px 20px 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(248, 96, 0, 0.1);
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.links-logo {
+    height: 70px;
+    width: auto;
+    margin-bottom: 16px;
+}
+
+.links-title {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 48px;
+    font-weight: bold;
+    color: #f86000;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.links-tagline {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Links Content */
+.links-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Link Card */
+.link-card {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(248, 96, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(248, 96, 0, 0.12);
+    text-decoration: none;
+    color: #333;
+    padding: 16px 18px;
+    gap: 14px;
+    animation: fadeIn 0.3s ease;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(248, 96, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: rgba(248, 96, 0, 0.25);
+}
+
+.link-card:active {
+    transform: translateY(-2px);
+}
+
+/* Link Icon — default (SVG icons) */
+.link-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(248, 179, 0, 0.15) 0%, rgba(248, 96, 0, 0.12) 100%);
+    border: 1px solid rgba(248, 96, 0, 0.08);
+    color: #f86000;
+}
+
+.link-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Link Icon — delivery apps (white logos on orange background) */
+.link-icon.delivery-icon {
+    background: linear-gradient(135deg, #f86000, #f8b300);
+    border: none;
+}
+
+.link-icon.delivery-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* Link Info */
+.link-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.link-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.link-info p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* Arrow */
+.link-arrow {
+    color: #f86000;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.link-card:hover .link-arrow {
+    transform: translateX(3px);
+}
+
+/* Section Divider */
+.section-label {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f86000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-left: 4px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(248, 96, 0, 0.15);
+}
+
+/* Footer */
+.links-footer {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.links-footer p {
+    font-size: 12px;
+    color: #999;
+}
+
+.links-footer .footer-sub {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #ccc;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive - Tablet */
+@media (min-width: 768px) {
+    .links-header {
+        padding: 60px 30px 40px;
+    }
+
+    .links-logo {
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .links-title {
+        font-size: 56px;
+        letter-spacing: 5px;
+    }
+
+    .links-content {
+        padding: 40px 20px;
+    }
+
+    .link-card {
+        padding: 18px 22px;
+    }
+
+    .link-info h3 {
+        font-size: 18px;
+    }
+
+    .link-info p {
+        font-size: 13px;
+    }
+
+    .link-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .link-icon.delivery-icon img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .links-header {
+        padding: 35px 15px 25px;
+    }
+
+    .links-logo {
+        height: 60px;
+        margin-bottom: 14px;
+    }
+
+    .links-title {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+    .links-tagline {
+        font-size: 13px;
+    }
+
+    .links-content {
+        padding: 20px 15px;
+        gap: 12px;
+    }
+
+    .link-card {
+        padding: 14px 14px;
+        gap: 12px;
+    }
+
+    .link-info h3 {
+        font-size: 14px;
+    }
+
+    .link-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .link-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .link-icon.delivery-icon img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Touch Feedback */
+@media (hover: none) {
+    .link-card:hover {
+        transform: none;
+    }
+}

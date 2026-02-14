@@ -1,0 +1,304 @@
+/* Fonts */
+@font-face {
+    font-family: 'Ketchup Manis';
+    src: url('../menu/style.css');
+    src: url('../font/Ketchup Manis.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* A4 Page - Single Page Layout */
+.page {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    padding: 6mm 8mm;
+    /* Reduced padding */
+    /* Tight margins for max space */
+    display: flex;
+    flex-direction: column;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .book-container {
+        padding: 0;
+    }
+
+    .page {
+        margin: 0;
+        break-after: avoid;
+        box-shadow: none;
+    }
+}
+
+/* Compact Header */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4mm;
+    margin-bottom: 2mm;
+    /* Reduced margin */
+    border-bottom: 2px solid #f86000;
+    padding-bottom: 1mm;
+}
+
+.header-logo {
+    height: 14mm;
+    width: auto;
+}
+
+.header-title {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 24pt;
+    color: #f86000;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.discount-badge {
+    background: #f86000;
+    color: white;
+    width: 16mm;
+    height: 16mm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Ketchup Manis';
+    font-size: 10pt;
+    line-height: 0.9;
+    transform: rotate(-12deg);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+}
+
+.header-subtitle {
+    font-size: 9pt;
+    color: #555;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid System */
+.section-title {
+    background: #f86000;
+    color: white;
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 14pt;
+    padding: 1mm 6mm;
+    border-radius: 4px;
+    margin: 2mm 0 3mm 0;
+    display: inline-block;
+    align-self: center;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    row-gap: 2mm;
+    /* Reduced from 5mm */
+    margin-bottom: 1mm;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.item-image-container {
+    width: 100%;
+    height: 32mm;
+    /* Compact image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1mm;
+}
+
+.item-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: none;
+}
+
+.item-name {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 12pt;
+    color: #f86000;
+    line-height: 1;
+    margin-bottom: 1mm;
+}
+
+.item-desc {
+    font-size: 7.5pt;
+    color: #444;
+    line-height: 1.2;
+    margin-bottom: 2mm;
+    height: 9mm;
+    /* Fixed height for alignment */
+    overflow: hidden;
+    padding: 0 1mm;
+}
+
+/* Dual Price Box */
+.price-container {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.price-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1mm 0;
+}
+
+.price-box.sandwich {
+    background: #fff;
+    border-right: 1px solid #eee;
+}
+
+.price-box.meal {
+    background: #fff8f0;
+    /* Slight highlight for meal */
+}
+
+.price-label {
+    font-size: 6pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.5mm;
+}
+
+.price-row {
+    line-height: 1;
+}
+
+.p-orig {
+    font-size: 8pt;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.p-disc {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 11pt;
+    color: #000;
+}
+
+.meal-highlight .p-disc {
+    color: #e65100;
+    /* Orange for meal price */
+}
+
+/* Sides & Extras Grid */
+.extras-container {
+    display: flex;
+    gap: 5mm;
+    margin-top: auto;
+    /* Push to bottom if space permits */
+    border-top: 1px dashed #ddd;
+    padding-top: 3mm;
+}
+
+.extras-col {
+    flex: 1;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3mm;
+}
+
+.mini-item {
+    text-align: center;
+}
+
+.mini-img {
+    height: 20mm;
+    width: 100%;
+    object-fit: contain;
+}
+
+.mini-name {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #333;
+}
+
+.mini-price {
+    font-family: 'Ketchup Manis', cursive;
+    font-size: 10pt;
+    color: #f86000;
+}
+
+.mini-price span {
+    font-size: 8pt;
+    color: #aaa;
+    text-decoration: line-through;
+    margin-right: 2px;
+}
+
+/* Drinks List Compact */
+.drinks-list {
+    font-size: 9pt;
+}
+
+.drink-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #eee;
+    padding: 1mm 0;
+}
+
+.drink-name {
+    font-weight: 600;
+}
+
+.drink-price {
+    font-family: 'Ketchup Manis', cursive;
+    color: #f86000;
+}
